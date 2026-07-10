@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>lftp-sync-manager</Name>
+  <Repository>cj0r/lftp-sync-manager:latest</Repository>
+  <Registry>https://hub.docker.com/r/cj0r/lftp-sync-manager</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/cj0r/lftp-sync-manager/issues</Support>
+  <Project>https://github.com/cj0r/lftp-sync-manager</Project>
+  <Overview>Dockerized LFTP Transfer Manager with a sleek Web GUI featuring real-time file watching, cron schedules, bandwidth throttling, and automated SSH key handshakes.</Overview>
+  <Description>LFTP Sync Manager is a sleek, web-based control panel and automation manager for lftp transfers. It provides a modern Web GUI to orchestrate and monitor fast, multi-segmented, parallel file transfers (Push/Pull) over SFTP, complete with real-time file-watching and cron schedules.
+
+Key Features:
+- Sleek Web GUI: Real-time progress bars, speed calculations (Mbps/MBs), log viewers, and 30-day transfer speed graphs.
+- High-Performance Transfers: Leverages lftp's powerful capabilities including segmented downloads (nsegment), parallel file queues (nfile), and automatic reconnects.
+- SSH Key Handshake Tool: Automatically generates SSH RSA keypairs and installs the public key to your remote SFTP host's authorized_keys file directly from the Web UI—eliminating the need to store passwords in your configuration files.
+- Real-Time Push Sync: Watches a local directory using chokidar and automatically uploads new/modified files to the remote server instantly.
+- Cron-Scheduled Syncs: Run push or pull operations automatically at specific intervals using standard cron expressions.
+- Bandwidth Throttling &amp; Scheduling: Restrict download and upload speeds (in KB/s) either globally or on a custom schedule (time-of-day and day-of-week) to preserve network capacity.
+- Wildcard Include/Exclude Filters: Fine-tune transfers by specifying comma-separated glob patterns (e.g., *.tmp, *.mkv) to target only the files you want.
+- Advanced Sync Options: Fine-grained transfer options including Delete Target Files (true mirroring), Dry Run Mode, Ignore Modification Time, and Only Sync Missing Files.</Description>
+  <Category>Backup: Network:FTP Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:9342]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/cj0r/unraid-templates/main/templates/lftp-sync-manager.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/cj0r/lftp-sync-manager/production/public/icon.png</Icon>
+  <Config Name="Web UI Port" Target="9342" Default="9342" Mode="port" Description="Web interface access port." Type="Port" Display="always" Required="true" Mask="false">9342</Config>
+  <Config Name="App Configuration" Target="/config" Default="/mnt/user/appdata/lftp-sync-manager" Mode="rw" Description="Persistent configuration, history, and logs storage directory." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/lftp-sync-manager</Config>
+  <Config Name="Local Upload Directory" Target="/local-push" Default="/mnt/user/appdata/lftp-sync-manager/upload" Mode="rw" Description="Local directory scanned for automatic file uploads (Push)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/lftp-sync-manager/upload</Config>
+  <Config Name="Local Download Directory" Target="/local-pull" Default="/mnt/user/appdata/lftp-sync-manager/download" Mode="rw" Description="Directory where files will be pulled from remote hosts (Pull)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/lftp-sync-manager/download</Config>
+</Container>

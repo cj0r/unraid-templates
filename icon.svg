@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Google Font Import -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&amp;display=swap');
+    </style>
+
+    <!-- Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#140f2d" />
+      <stop offset="60%" stop-color="#070512" />
+      <stop offset="100%" stop-color="#010003" />
+    </radialGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff" />
+      <stop offset="50%" stop-color="#ff007f" />
+      <stop offset="100%" stop-color="#9900ff" />
+    </linearGradient>
+
+    <!-- CRT Scanline Pattern -->
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000000" opacity="0.35" />
+    </pattern>
+
+    <!-- Intense Magenta Glow Filter (Background) -->
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Tight Cyan Glow Filter (Middle) -->
+    <filter id="subtle-neon" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Vector Paths for Cyberpunk CJ Font -->
+    <!-- Stylized, spiked, sharp polygonal C -->
+    <path id="path-c" d="M 250 120 L 140 120 L 120 100 L 120 150 L 110 160 L 120 170 L 120 270 L 100 320 L 130 300 L 250 300 L 220 255 L 165 255 L 165 165 L 220 165 Z" />
+    
+    <!-- Stylized, spiked, sharp polygonal J -->
+    <path id="path-j" d="M 280 120 L 380 120 L 400 100 L 375 140 L 375 165 L 350 165 L 350 270 L 370 320 L 330 300 L 290 300 L 270 280 L 270 230 L 310 230 L 310 260 L 315 260 L 315 165 L 280 165 Z" />
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect x="20" y="20" width="472" height="472" rx="100" fill="url(#bg-grad)" stroke="url(#border-grad)" stroke-width="4" />
+
+  <!-- CRT Scanline Overlay -->
+  <rect x="20" y="20" width="472" height="472" rx="100" fill="url(#scanlines)" pointer-events="none" />
+
+  <!-- Cyberpunk Tech Grid (Faint Background Detail) -->
+  <g opacity="0.04" stroke="#00ffff" stroke-width="1.5" fill="none">
+    <line x1="20" y1="256" x2="492" y2="256" />
+    <line x1="256" y1="20" x2="256" y2="492" />
+    <rect x="45" y="45" width="422" height="422" rx="80" stroke-dasharray="15, 45" />
+    <circle cx="256" cy="256" r="180" />
+  </g>
+
+  <!-- Corner tech accents -->
+  <g stroke="#ff007f" stroke-width="3" fill="none" opacity="0.5" filter="url(#subtle-neon)">
+    <path d="M 50 90 L 50 50 L 90 50" />
+    <path d="M 462 90 L 462 50 L 422 50" />
+    <path d="M 50 422 L 50 462 L 90 462" />
+    <path d="M 462 422 L 462 462 L 422 462" />
+  </g>
+
+  <!-- Main Cyberpunk Slanted Logo Group (CJ + DESIGNS) -->
+  <!-- Corrected translations (+20px right, +46px down) to counter skew drifting and balance margins -->
+  <g transform="translate(256, 256) skewX(-12) translate(-236, -210)">
+    
+    <!-- === LAYER 1: HEAVY MAGENTA BACK GLOW === -->
+    <g fill="#ff007f" filter="url(#neon-glow)" opacity="0.9">
+      <use href="#path-c" x="4" y="2" />
+      <use href="#path-j" x="4" y="2" />
+      <text x="250" y="360" font-family="'Orbitron', sans-serif" font-weight="900" font-size="28" letter-spacing="12" text-anchor="middle" dx="3" dy="1.5">DESIGNS</text>
+    </g>
+
+    <!-- === LAYER 2: CYAN MIDDLE GLOW === -->
+    <g fill="#00ffff" filter="url(#subtle-neon)" opacity="0.95">
+      <use href="#path-c" x="-3" y="-1.5" />
+      <use href="#path-j" x="-3" y="-1.5" />
+      <text x="250" y="360" font-family="'Orbitron', sans-serif" font-weight="900" font-size="28" letter-spacing="12" text-anchor="middle" dx="-2" dy="-1">DESIGNS</text>
+    </g>
+
+    <!-- === LAYER 3: CRISP WHITE TOP CORE === -->
+    <g fill="#ffffff">
+      <use href="#path-c" />
+      <use href="#path-j" />
+      <text x="250" y="360" font-family="'Orbitron', sans-serif" font-weight="900" font-size="28" letter-spacing="12" text-anchor="middle">DESIGNS</text>
+    </g>
+
+    <!-- === LAYER 4: HORIZONTAL GLITCH SLITS === -->
+    <!-- Cyan Glitch Lines -->
+    <g fill="#00ffff" opacity="0.8">
+      <rect x="90" y="195" width="130" height="3" />
+      <rect x="250" y="210" width="140" height="2" />
+      <rect x="150" y="348" width="180" height="2" />
+    </g>
+    <!-- Magenta Glitch Lines -->
+    <g fill="#ff007f" opacity="0.8">
+      <rect x="110" y="197" width="100" height="2" />
+      <rect x="240" y="208" width="130" height="3" />
+      <rect x="170" y="349" width="150" height="2" />
+    </g>
+
+  </g>
+</svg>
