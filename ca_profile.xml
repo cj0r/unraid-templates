@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CommunityApplications>
   <Profile>Custom Unraid templates and community application wrappers maintained by cj0r.</Profile>
+  <DonateLink>https://www.buymeacoffee.com/cj0r</DonateLink>
+  <DonateText>If any of my creations have simplified or improved your life, consider supporting their continued development! Any contribution is highly appreciated.</DonateText>
   <Icon>https://raw.githubusercontent.com/cj0r/unraid-templates/main/icon.svg</Icon>
   <WebPage>https://github.com/cj0r/unraid-templates</WebPage>
 </CommunityApplications>
