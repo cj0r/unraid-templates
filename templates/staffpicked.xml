@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>staffpicked</Name>
+  <Repository>cj0r/staffpicked:latest</Repository>
+  <Registry>https://hub.docker.com/r/cj0r/staffpicked</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/cj0r/staffpicked/issues</Support>
+  <Project>https://github.com/cj0r/staffpicked</Project>
+  <ReadMe>https://github.com/cj0r/staffpicked#readme</ReadMe>
+  <Overview>StaffPicked builds collections and playlists on Emby and Jellyfin from MDBList lists, Trakt lists and your own Markdown lists, with artwork from TMDB, fanart.tv, MediUX or your own files, all kept in sync on a schedule from one web UI.</Overview>
+  <Description>StaffPicked is named for the shelf of staff picks at the old video store: a few carefully chosen lists, put together by people who care. It builds collections and playlists on Emby and Jellyfin, supported equally, and keeps them in sync on a schedule, on one media server or several at once.
+
+Key Features:
+- Lists from anywhere: MDBList (public and private lists), Trakt (lists and watchlists) and your own Markdown list files, edited in the web UI.
+- Artwork: posters and backdrops from TMDB, fanart.tv, MediUX, any URL or your own uploads, plus your own artwork on the server's genres.
+- Seasonal windows: a collection or playlist exists only while it's in season, with a calendar of the whole year.
+- Watched-aware playlists: playlists keep the list's order and can drop what's already been watched, shared or per person.
+- Safety first: dry runs show every change before it's made, and a safety brake holds back any sync that would empty most of a list.
+- Several servers: Emby and Jellyfin side by side, every list on every server or only the ones it names.
+- Requests: missing films show whether Seerr, Radarr or Sonarr already has them, with one-click requests.
+- Secure web UI: password with optional two-factor sign-in, ready for a reverse proxy.
+
+After the first start, open the WebUI and finish the setup screen: your media server, your list keys and a password. StaffPicked creates, changes and deletes collections and playlists on your servers, so try a dry run first and read the README's Security and Disclaimer sections.</Description>
+  <Category>MediaApp:Video Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:9343]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/cj0r/unraid-templates/main/templates/staffpicked.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/cj0r/staffpicked/main/docs/logo/icon.png</Icon>
+  <ExtraParams>--security-opt no-new-privileges:true</ExtraParams>
+  <Requires>An Emby or Jellyfin server. MDBList and Trakt lists need a free API key from those services.</Requires>
+  <ExtraSearchTerms>emby jellyfin collections playlists mdblist trakt posters artwork seasonal</ExtraSearchTerms>
+  <License>GPL-3.0</License>
+  <DonateText>If you appreciate my work, please consider supporting me via Buy Me a Coffee!</DonateText>
+  <DonateLink>https://www.buymeacoffee.com/cj0r</DonateLink>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/staffpicked/main/docs/screenshots/dashboard.webp</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/staffpicked/main/docs/screenshots/poster-view.webp</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/staffpicked/main/docs/screenshots/list-window.webp</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/staffpicked/main/docs/screenshots/season-calendar.webp</Screenshot>
+  <Config Name="Web UI Port" Target="9343" Default="9343" Mode="tcp" Description="Web interface access port." Type="Port" Display="always" Required="true" Mask="false">9343</Config>
+  <Config Name="App Configuration" Target="/config" Default="/mnt/user/appdata/staffpicked" Mode="rw" Description="Settings, list files, artwork copies and backups." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/staffpicked</Config>
+  <Config Name="Artwork Folder" Target="/artwork" Default="" Mode="ro" Description="Optional: a folder of your own posters and backdrops, so a list can point at /artwork/name.jpg." Type="Path" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="PUID" Target="PUID" Default="99" Description="User the container runs as (99 = nobody on Unraid)." Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Description="Group the container runs as (100 = users on Unraid)." Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>
