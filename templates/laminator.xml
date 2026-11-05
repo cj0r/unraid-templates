@@ -26,7 +26,7 @@ After the first start, open the container's log for the one-time setup code, ope
   <Category>MediaApp:Video Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:5264]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/cj0r/unraid-templates/main/templates/laminator.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/cj0r/laminator/main/docs/logo/icon.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/cj0r/unraid-templates/main/icons/laminator.png</Icon>
   <ExtraParams>--security-opt no-new-privileges:true</ExtraParams>
   <Requires>An Emby or Jellyfin server and a free MDBList API key from mdblist.com.</Requires>
   <ExtraSearchTerms>emby jellyfin posters overlay badges ratings scores mdblist metadata kometa artwork</ExtraSearchTerms>
