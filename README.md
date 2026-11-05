@@ -5,10 +5,13 @@ A collection of custom Unraid Docker XML templates.
 ## Templates Included
 
 * **[LFTP Sync Manager](https://github.com/cj0r/lftp-sync-manager)**: A sleek, web-based control panel and automation manager for `lftp` transfers featuring real-time file watching, scheduled syncs, and automated SSH key handshakes.
+
   [GitHub](https://github.com/cj0r/lftp-sync-manager) · [Docker Hub](https://hub.docker.com/r/cj0r/lftp-sync-manager) · [Issues](https://github.com/cj0r/lftp-sync-manager/issues)
 * **[StaffPicked](https://github.com/cj0r/staffpicked)**: Builds collections and playlists on Emby and Jellyfin from MDBList, Trakt and your own lists, with seasonal windows, watched-aware playlists and artwork from TMDB, fanart.tv and MediUX.
+
   [GitHub](https://github.com/cj0r/staffpicked) · [Docker Hub](https://hub.docker.com/r/cj0r/staffpicked) · [Issues](https://github.com/cj0r/staffpicked/issues)
 * **[laminator](https://github.com/cj0r/laminator)**: Draws MDBList score badges (IMDb, TMDb, Rotten Tomatoes and more) on your Emby and Jellyfin posters, always from the untouched original so they update instead of stacking. It also applies metadata overrides (content rating, titles, descriptions, tags and more), supports custom posters, scheduled runs and backups, and can undo everything it did. Emby and Jellyfin are supported side by side, with a password and optional two-factor sign-in.
+
   [GitHub](https://github.com/cj0r/laminator) · [Releases](https://github.com/cj0r/laminator/releases) · [Docker Hub](https://hub.docker.com/r/cj0r/laminator) · [Issues](https://github.com/cj0r/laminator/issues)
 
 ## How to use
