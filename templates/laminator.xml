@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>laminator</Name>
+  <Repository>cj0r/laminator:latest</Repository>
+  <Registry>https://hub.docker.com/r/cj0r/laminator</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/cj0r/laminator/issues</Support>
+  <Project>https://github.com/cj0r/laminator</Project>
+  <ReadMe>https://github.com/cj0r/laminator#readme</ReadMe>
+  <Overview>laminator draws MDBList score badges (IMDb, TMDb, Rotten Tomatoes and more) on the posters in your Emby and Jellyfin libraries, and can change metadata such as content rating, titles and descriptions, all from one web UI. Every change is reversible.</Overview>
+  <Description>laminator is an alternative to Kometa's overlays for Emby and Jellyfin, supported equally. It draws score badges on your existing posters and applies metadata overrides to your items, and it can undo everything it did.
+
+Key Features:
+- Score badges from MDBList (the combined score, or IMDb, TMDb, Trakt, Letterboxd, Rotten Tomatoes, Metacritic and others), always drawn on the untouched original so they update instead of stacking.
+- Templates with a live preview, to design the badge: position, size, font and which sources to show.
+- Metadata overrides: content rating, title, sort title, original title, tagline, description, critic rating, tags, genres and more, locked so a library refresh cannot undo them.
+- Custom posters per title, for fan edits and the like.
+- Fully reversible: original posters and old values are kept, restorable per title or all at once.
+- Scheduled runs that only touch new or changed posters, backups, and a library page with filters, search and posters, compact or list views.
+- Emby and Jellyfin side by side, each with its own saved posters.
+- Secure web UI: password chosen on first start, optional two-factor sign-in, ready for a reverse proxy.
+
+After the first start, open the container's log for the one-time setup code, open the WebUI, choose a password, then add your media server and your MDBList key in Settings. laminator changes posters and metadata on your media server, so try it on a few titles first and read the README's disclaimer. Keep the /data folder in your backups: it holds the saved original posters.</Description>
+  <Category>MediaApp:Video Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:5264]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/cj0r/unraid-templates/main/templates/laminator.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/cj0r/laminator/main/docs/logo/icon.svg</Icon>
+  <ExtraParams>--security-opt no-new-privileges:true</ExtraParams>
+  <Requires>An Emby or Jellyfin server and a free MDBList API key from mdblist.com.</Requires>
+  <ExtraSearchTerms>emby jellyfin posters overlay badges ratings scores mdblist metadata kometa artwork</ExtraSearchTerms>
+  <License>GPL-3.0</License>
+  <DonateText>If you appreciate my work, please consider supporting me via Buy Me a Coffee!</DonateText>
+  <DonateLink>https://www.buymeacoffee.com/cj0r</DonateLink>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/laminator/main/docs/screenshots/library.webp</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/laminator/main/docs/screenshots/templates.webp</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/laminator/main/docs/screenshots/metadata.webp</Screenshot>
+  <Config Name="Web UI Port" Target="5264" Default="5264" Mode="tcp" Description="Web interface access port." Type="Port" Display="always" Required="true" Mask="false">5264</Config>
+  <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/laminator" Mode="rw" Description="Settings, saved original posters, state and backups. Keep this in your backups." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/laminator</Config>
+  <Config Name="Custom Posters Folder" Target="/assets" Default="" Mode="rw" Description="Optional: a folder for your own base posters (Settings > Custom posters > folder: /assets)." Type="Path" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Second Backup Folder" Target="/backups" Default="" Mode="rw" Description="Optional: a second copy of laminator's backups, for example on another share." Type="Path" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Time Zone" Target="TZ" Default="Etc/UTC" Description="Your time zone, for the schedule (for example America/New_York)." Type="Variable" Display="advanced" Required="false" Mask="false">Etc/UTC</Config>
+  <Config Name="Admin Password" Target="LAMINATOR_ADMIN_PASSWORD" Default="" Description="Optional: preset the web UI password instead of choosing it on first start with the setup code from the log." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="Public URL" Target="LAMINATOR_PUBLIC_URL" Default="" Description="Optional, behind a reverse proxy: the address you use in the browser, for example https://laminator.example.com." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Trusted Proxies" Target="LAMINATOR_TRUSTED_PROXIES" Default="" Description="Optional, behind a reverse proxy: the proxy's address or network (for example 172.18.0.0/16). Only its forwarded headers are believed." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
