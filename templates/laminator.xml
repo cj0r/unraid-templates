@@ -16,9 +16,10 @@ Key Features:
 - Score badges from MDBList (the combined score, or IMDb, TMDb, Trakt, Letterboxd, Rotten Tomatoes, Metacritic and others), always drawn on the untouched original so they update instead of stacking.
 - Templates with a live preview, to design the badge: position, size, font and which sources to show.
 - Metadata overrides: content rating, title, sort title, original title, tagline, description, critic rating, tags, genres and more, locked so a library refresh cannot undo them.
-- Custom posters per title, for fan edits and the like.
+- Custom posters per title, for fan edits and the like, with a searchable gallery.
+- Copies of one title (an HD and a UHD folder) shown together, each still with its own poster if you want.
 - Fully reversible: original posters and old values are kept, restorable per title or all at once.
-- Scheduled runs that only touch new or changed posters, backups, and a library page with filters, search and posters, compact or list views.
+- Scheduled runs that only touch new or changed posters, backups to a folder of your choice with an optional second copy, and a library page with filters, search and posters, compact or list views.
 - Emby and Jellyfin side by side, each with its own saved posters.
 - Secure web UI: password chosen on first start, optional two-factor sign-in, ready for a reverse proxy.
 
@@ -37,9 +38,11 @@ After the first start, open the container's log for the one-time setup code, ope
   <Screenshot>https://raw.githubusercontent.com/cj0r/laminator/main/docs/screenshots/templates.webp</Screenshot>
   <Screenshot>https://raw.githubusercontent.com/cj0r/laminator/main/docs/screenshots/metadata.webp</Screenshot>
   <Config Name="Web UI Port" Target="5264" Default="5264" Mode="tcp" Description="Web interface access port." Type="Port" Display="always" Required="true" Mask="false">5264</Config>
-  <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/laminator" Mode="rw" Description="Settings, saved original posters, state and backups. Keep this in your backups." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/laminator</Config>
+  <Config Name="App Data" Target="/data" Default="/mnt/user/appdata/laminator" Mode="rw" Description="Settings, saved original posters and state (and the backups, unless you map a Backup Folder below). Keep this in your backups." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/laminator</Config>
   <Config Name="Custom Posters Folder" Target="/assets" Default="" Mode="rw" Description="Optional: a folder for your own base posters (Settings > Custom posters > folder: /assets)." Type="Path" Display="advanced" Required="false" Mask="false"/>
-  <Config Name="Second Backup Folder" Target="/backups" Default="" Mode="rw" Description="Optional: a second copy of laminator's backups, for example on another share." Type="Path" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Backup Folder" Target="/backups" Default="" Mode="rw" Description="Optional: keep laminator's backups here instead of inside App Data, for example on the array or another share. Also set Backup Folder Path below to /backups (or choose it in Settings > Backup and restore > Backup folder, which can move existing backups for you)." Type="Path" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Backup Folder Path" Target="LAMINATOR_BACKUP_DIR" Default="" Description="Optional: /backups to use the Backup Folder mapped above. Leave empty to keep backups in App Data (a folder chosen in Settings takes precedence)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Second Backup Folder" Target="/backups-secondary" Default="" Mode="rw" Description="Optional: a second copy of every backup, for example on another disk or share. Turn it on in Settings > Backup and restore > Second copy: Local folder, path /backups-secondary." Type="Path" Display="advanced" Required="false" Mask="false"/>
   <Config Name="Time Zone" Target="TZ" Default="Etc/UTC" Description="Your time zone, for the schedule (for example America/New_York)." Type="Variable" Display="advanced" Required="false" Mask="false">Etc/UTC</Config>
   <Config Name="Admin Password" Target="LAMINATOR_ADMIN_PASSWORD" Default="" Description="Optional: preset the web UI password instead of choosing it on first start with the setup code from the log." Type="Variable" Display="advanced" Required="false" Mask="true"/>
   <Config Name="Public URL" Target="LAMINATOR_PUBLIC_URL" Default="" Description="Optional, behind a reverse proxy: the address you use in the browser, for example https://laminator.example.com." Type="Variable" Display="advanced" Required="false" Mask="false"/>
