@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Plugin>
+  <Name>Docker Steward</Name>
+  <PluginURL>https://raw.githubusercontent.com/cj0r/unraid-docker-steward/main/plugin/docker.steward.plg</PluginURL>
+  <Support>https://github.com/cj0r/unraid-docker-steward/issues</Support>
+  <Project>https://github.com/cj0r/unraid-docker-steward</Project>
+  <ReadMe>https://github.com/cj0r/unraid-docker-steward#readme</ReadMe>
+  <Icon>https://raw.githubusercontent.com/cj0r/unraid-templates/main/icons/docker-steward.png</Icon>
+  <Category>Tools:Utilities</Category>
+  <MinVer>7.0.0</MinVer>
+  <License>MIT</License>
+  <DonateText>If you appreciate my work, please consider supporting me via Buy Me a Coffee!</DonateText>
+  <DonateLink>https://www.buymeacoffee.com/cj0r</DonateLink>
+  <Overview>Check and update Docker containers one at a time or in bulk, from a single page: per-container Check and Update buttons, containers grouped by what needs doing, "Check &amp; update", live update progress, and a compatibility check that tells you if a new Unraid version needs a plugin update.</Overview>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/unraid-docker-steward/main/docs/screenshots/overview.webp</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/unraid-docker-steward/main/docs/screenshots/row-menu.webp</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/unraid-docker-steward/main/docs/screenshots/progress-popup.webp</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/cj0r/unraid-docker-steward/main/docs/screenshots/phone.webp</Screenshot>
+</Plugin>

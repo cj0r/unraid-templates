@@ -14,9 +14,13 @@ A collection of custom Unraid Docker XML templates.
 
   [GitHub](https://github.com/cj0r/laminator) · [Releases](https://github.com/cj0r/laminator/releases) · [Docker Hub](https://hub.docker.com/r/cj0r/laminator) · [Issues](https://github.com/cj0r/laminator/issues)
 
+* **[Docker Steward](https://github.com/cj0r/unraid-docker-steward)** (plugin): Check and update Docker containers one at a time or in bulk from one page, with per-container buttons, containers grouped by what needs doing, live update progress and a compatibility check for new Unraid versions.
+
+  [GitHub](https://github.com/cj0r/unraid-docker-steward) · [Releases](https://github.com/cj0r/unraid-docker-steward/releases) · [Issues](https://github.com/cj0r/unraid-docker-steward/issues)
+
 ## How to use
 
-To add these templates to your Unraid server, search for **LFTP Sync Manager**, **StaffPicked** or **laminator** in the **Community Applications** tab, then press **Install**. Each application's README, linked above, explains its first-start setup.
+To add these templates to your Unraid server, search for **LFTP Sync Manager**, **StaffPicked**, **laminator** or **Docker Steward** in the **Community Applications** tab, then press **Install**. Each application's README, linked above, explains its first-start setup.
 
 ## ☕ Support the Project
 
