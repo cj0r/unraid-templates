@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <Plugin>
   <Name>Docker Steward</Name>
+  <PluginAuthor>cj0r</PluginAuthor>
   <PluginURL>https://raw.githubusercontent.com/cj0r/unraid-docker-steward/main/plugin/docker.steward.plg</PluginURL>
   <Support>https://github.com/cj0r/unraid-docker-steward/issues</Support>
   <Project>https://github.com/cj0r/unraid-docker-steward</Project>
-  <ReadMe>https://github.com/cj0r/unraid-docker-steward#readme</ReadMe>
+  <ReadMe>https://raw.githubusercontent.com/cj0r/unraid-docker-steward/main/README.md</ReadMe>
   <Icon>https://raw.githubusercontent.com/cj0r/unraid-templates/main/icons/docker-steward.png</Icon>
   <Category>Tools:Utilities</Category>
-  <MinVer>7.0.0</MinVer>
   <License>MIT</License>
   <DonateText>If you appreciate my work, please consider supporting me via Buy Me a Coffee!</DonateText>
   <DonateLink>https://www.buymeacoffee.com/cj0r</DonateLink>
